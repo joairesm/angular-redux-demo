@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+  
+    <input [(ngModel)]="newitem" >
+  
+  
+    <button (click)="increment()">Add to List</button>
+  
+    <div *ngFor="let todo of todos">
+      <h1 [ngClass]="{'stroke': !todo.state}" (click)="toggle(todo)" >{{todo.value}}
+  
+      <button (click)="delete(todo)">X</button> 
+      </h1>
+    </div>
+    
+  </div>
+  <style>
+  
+    .stroke{
+      text-decoration: line-through;
+    }
+  
+  
+  </style>
+  

@@ -6,12 +6,16 @@ import {NgRedux, NgReduxModule} from 'ng2-redux';
 import { IAppState, rootReducer, INITIALSTATE } from './store';
 import { FormsModule } from '@angular/forms';
 
-import {DashboardComponent} from './components/dashboard.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {TaskComponent} from './TaskManager/task.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    TaskComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { NgRedux } from 'ng2-redux';
-import {IAppState} from './../store';
-import { ADD_TODO, REMOVE_TODO, TOGGLE, DELETE_ALL } from './../actions';
-import { todo } from './../Models/Todos';
+import { DELETE_ALL } from './actions';
+import { ITaskingState } from './store';
+import { IAppState } from '../store';
 
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {
-    count = 0;
+    datetime = null;
 
   constructor(private redux: NgRedux<IAppState>){
     var sub = redux.subscribe( () => {
       var store = redux.getState();
-      this.count = store.counter;
+      this.datetime = store.tasking.lastUpdate;
     });
   }
   deleteall(){
